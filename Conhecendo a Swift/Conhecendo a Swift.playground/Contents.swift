@@ -19,3 +19,57 @@ let status = "Se \(nome1) estivesse vivo, teria \(idade) anos"
 // ou
 print("Se \(nome1) estivesse vivo, teria \(idade) anos")
 print(status)
+
+/*
+ Tuplas
+ */
+let httpCode = 404
+let httpMsg = "Not found"
+print("Erro \(httpCode) - Msg: \(httpMsg)")
+
+let http404Error = (404, "Not found")
+
+// Como exibir as informações da tupla?
+//1. Por decomposição
+let (statusCode, statusmessage) = http404Error
+
+//2. Pelo indice
+print("O codigo de erro é: \(http404Error.0)")
+print("A mensagem de erro é: \(http404Error.1)")
+
+// Comparações em Swift
+let valor1 = 10
+let valor2 = 20
+if valor1 == valor2{
+    print("Valores iguais")
+} else {
+    print("Valores diferentes")
+}
+
+
+// Loop
+//let int i = 0;
+//for (i:0; i>10; i++){
+//    print(i)
+//}
+
+//Funções em Swift
+func sayHello(nome: String) -> String{
+//    let greeting = "Olá! " + nome + "!"
+//    return greeting
+//    Refatorando
+        return "Olá " + nome + "!"
+}
+
+// Chamando a Função
+let resposta = sayHello(nome: "Carlos")
+print(resposta)
+
+//Tornando o nome do parametro opcional
+func sayName(_ firstName: String, lastName: String) {
+    print(firstName + lastName)
+}
+
+sayName("Marco", lastName: " Beraldi")
+
+//Definição de Classe
