@@ -73,3 +73,16 @@ func sayName(_ firstName: String, lastName: String) {
 sayName("Marco", lastName: " Beraldi")
 
 //Definição de Classe
+
+import Foundation
+class MyClass: NSObject{
+    func mostrarNoConsole(_ texto:String){
+        print(texto)
+    }
+}
+
+// Invocando metodo da Classe
+let myClass = MyClass()
+myClass.mostrarNoConsole("Olá Mundo")
+
+
