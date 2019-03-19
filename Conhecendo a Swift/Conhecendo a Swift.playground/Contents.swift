@@ -85,4 +85,25 @@ class MyClass: NSObject{
 let myClass = MyClass()
 myClass.mostrarNoConsole("Olá Mundo")
 
+/*
+ Optional - minimizar a ocorrencia de quebra de app devido a valores nulos
+*/
+
+let possivelNum = "abc" //era 123 e passamos para abc, gerando erro
+//var numConvertido = Int(possivelNum)
+//
+//var numCalculado = numConvertido! + 10
+//print("Calculo: \(numCalculado)")
+
+//Tratamento de optional (boas praticas)
+//Opitional Binding
+if var numConvertido = Int(possivelNum){
+    let numCalculado = numConvertido + 10
+    print("Cálculo: \(numCalculado)")
+} else {
+    print("A origem do numero é invalida")
+}
+
+
+
 
