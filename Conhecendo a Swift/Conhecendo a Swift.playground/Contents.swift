@@ -105,5 +105,16 @@ if var numConvertido = Int(possivelNum){
 }
 
 
+// for na Swift
+var contatos:Array<String> = ["cão", "gato", "rato"]
+
+for contato in contatos{
+    print(contato)
+}
+
+// Tratamento do array
+contatos.append("cavalo")
+contatos.remove(at: 2)
+contatos
 
 
