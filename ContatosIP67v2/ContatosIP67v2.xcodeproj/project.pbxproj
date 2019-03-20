@@ -15,6 +15,7 @@
 		4CBC90672241B5A000C00AE0 /* ContatosIP67v2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC90652241B5A000C00AE0 /* ContatosIP67v2.xcdatamodeld */; };
 		4CBC90692241B5A000C00AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC90682241B5A000C00AE0 /* Assets.xcassets */; };
 		4CBC906C2241B5A000C00AE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC906A2241B5A000C00AE0 /* LaunchScreen.storyboard */; };
+		4CEF8FD02243020F00499EE0 /* ListaContatosViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF8FCF2243020F00499EE0 /* ListaContatosViewControllerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4CBC90682241B5A000C00AE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CBC906B2241B5A000C00AE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CBC906D2241B5A000C00AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CEF8FCF2243020F00499EE0 /* ListaContatosViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaContatosViewControllerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		4CBC90522241B5A000C00AE0 = {
 			isa = PBXGroup;
 			children = (
+				4CEF8FCF2243020F00499EE0 /* ListaContatosViewControllerTableViewController.swift */,
 				4CBC905D2241B5A000C00AE0 /* ContatosIP67v2 */,
 				4CBC905C2241B5A000C00AE0 /* Products */,
 			);
@@ -155,6 +158,7 @@
 				4C1906C12241CF3200163338 /* ContatoDAO.swift in Sources */,
 				4CBC90612241B5A000C00AE0 /* FormularioContatoViewController.swift in Sources */,
 				4CBC905F2241B5A000C00AE0 /* AppDelegate.swift in Sources */,
+				4CEF8FD02243020F00499EE0 /* ListaContatosViewControllerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
