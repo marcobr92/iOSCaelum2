@@ -20,6 +20,10 @@ class FormularioContatoViewController: UIViewController {
             self.endereco.text = contato.endereco
             self.siteText.text = contato.site
             
+            let botaoAlterar = UIBarButtonItem(title: "Confirmar", style: .plain, target: self, action: #selector(atualizaContato))
+            self.navigationItem.rightBarButtonItem = botaoAlterar
+            
+            
         }
     }
     
@@ -59,12 +63,20 @@ class FormularioContatoViewController: UIViewController {
 //        contato.site = self.siteText.text!
 //        
 //        dao.adiciona(contato)
-        self.contato = Contato();
+        
+        if contato == nil{
+            self.contato = Contato()
+        }
         
         self.contato.nome = self.nome.text!
         self.contato.telefone = self.telefone.text!
         self.contato.endereco = self.endereco.text!
         self.contato.site = self.siteText.text!
+    }
+    
+    func atualizaContato(){
+        pegaDadosDoFormulario()
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func criaContato(){
