@@ -10,8 +10,9 @@ import UIKit
 
 class ListaContatosViewControllerTableViewController: UITableViewController {
     
-    var dao:ContatoDAO
     static let cellIdentifier = "Cell"
+    var dao:ContatoDAO
+    
     
     required init?(coder aDecoder: NSCoder){
         self.dao = ContatoDAO.sharedInstance()
@@ -93,6 +94,27 @@ class ListaContatosViewControllerTableViewController: UITableViewController {
                 }
     }
     
+    //exercicio 11.2
+
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let contatoSelecionado = dao.buscaContatoNaPosicao(indexPath.row)
+        self.exibeFormulario(contatoSelecionado)
+        
+        
+    }
+    
+    //exercicio 11.4
+    
+    func exibeFormulario(_ contato:Contato){
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let formulario = storyboard.instantiateViewController(withIdentifier: "Form-Contato") as! FormularioContatoViewController
+        
+        formulario.contato = contato
+        
+        self.navigationController?.pushViewController(formulario, animated: true)
+    }
 
     /*
     // Override to support rearranging the table view.
