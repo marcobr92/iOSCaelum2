@@ -33,16 +33,36 @@ class FormularioContatoViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
-    @IBAction func pegaDadosDoFormulario() {
+    var contato: Contato!
+    
+//    func criaContato(){
+//        self.pegaDadosDoFormulario()
+//        dao.adiciona(contato)
+//    }
+    
+//   @IBAction func pegaDadosDoFormulario() {
+    func pegaDadosDoFormulario() {
         
-        let contato: Contato = Contato()
+//        let contato: Contato = Contato()
+//        
+//        contato.nome = self.nome.text!
+//        contato.telefone = self.telefone.text!
+//        contato.endereco = self.endereco.text!
+//        contato.site = self.siteText.text!
+//        
+//        dao.adiciona(contato)
+        self.contato = Contato();
         
-        contato.nome = self.nome.text!
-        contato.telefone = self.telefone.text!
-        contato.endereco = self.endereco.text!
-        contato.site = self.siteText.text!
-        
+        self.contato.nome = self.nome.text!
+        self.contato.telefone = self.telefone.text!
+        self.contato.endereco = self.endereco.text!
+        self.contato.site = self.siteText.text!
+    }
+    
+    @IBAction func criaContato(){
+        self.pegaDadosDoFormulario()
         dao.adiciona(contato)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
 }
