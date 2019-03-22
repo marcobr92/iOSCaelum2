@@ -68,9 +68,18 @@ class ListaContatosViewControllerTableViewController: UITableViewController, For
     override func viewDidAppear(_ animated: Bool) {
         
         self.tableView.reloadData()
+//        if let linha = self.linhaDestaque{
+//            self.tableView.selectRow(at: linha, animated: true, scrollPosition: .middle)
+//            self.linhaDestaque = Optional.none
+//        }
+        
         if let linha = self.linhaDestaque{
             self.tableView.selectRow(at: linha, animated: true, scrollPosition: .middle)
-            self.linhaDestaque = Optional.none
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
+                self.tableView.deselectRow(at: linha, animated: true)
+                self.linhaDestaque = .none
+            }
         }
     }
     
