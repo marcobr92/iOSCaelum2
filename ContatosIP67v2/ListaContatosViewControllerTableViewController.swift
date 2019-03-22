@@ -66,8 +66,14 @@ class ListaContatosViewControllerTableViewController: UITableViewController, For
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         self.tableView.reloadData()
+        if let linha = self.linhaDestaque{
+            self.tableView.selectRow(at: linha, animated: true, scrollPosition: .middle)
+            self.linhaDestaque = Optional.none
+        }
     }
+    
     
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete{
@@ -117,13 +123,15 @@ class ListaContatosViewControllerTableViewController: UITableViewController, For
         self.navigationController?.pushViewController(formulario, animated: true)
     }
     
+    var linhaDestaque: IndexPath?
+    
     func contatoAtualizado(_ contato: Contato) {
-        print("contato atualizado: \(contato.nome)");
+        self.linhaDestaque = IndexPath(row: dao.buscaPosicaoDoContato(contato), section: 0)
         
     }
     
     func contatoAdicionado(_ contato: Contato) {
-        print("contato adicionado: \(contato.nome)");
+        self.linhaDestaque = IndexPath(row: dao.buscaPosicaoDoContato(contato), section: 0)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -133,6 +141,10 @@ class ListaContatosViewControllerTableViewController: UITableViewController, For
             }
         }
     }
+    
+
+    
+
     
     /*
     // Override to support rearranging the table view.

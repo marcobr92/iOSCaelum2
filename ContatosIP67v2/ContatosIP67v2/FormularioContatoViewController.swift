@@ -80,7 +80,7 @@ class FormularioContatoViewController: UIViewController {
         pegaDadosDoFormulario()
         
         self.delegate?.contatoAtualizado(contato)
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func criaContato(){
@@ -88,7 +88,7 @@ class FormularioContatoViewController: UIViewController {
         dao.adiciona(contato)
         
         self.delegate?.contatoAdicionado(contato)
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
 
