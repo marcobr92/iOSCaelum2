@@ -25,6 +25,11 @@ class ListaContatosViewControllerTableViewController: UITableViewController, For
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
 
+        let  longPress = UILongPressGestureRecognizer(target: self, action: #selector(exibirMaisAcoes(gesture:)))
+        
+        self.tableView.addGestureRecognizer(longPress)
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -152,7 +157,23 @@ class ListaContatosViewControllerTableViewController: UITableViewController, For
     }
     
 
-    
+    func exibirMaisAcoes(gesture: UIGestureRecognizer){
+        
+        let ponto = gesture.location(in: self.tableView)
+        
+        if let indexPath:IndexPath = self.tableView.indexPathForRow(at:ponto){
+            let contato = self.dao.buscaContatoNaPosicao(indexPath.row)
+            let acoes = GerenciadorDeAcoes(do: contato)
+            acoes.exibirAcoes(em: self)
+        }
+        
+//        if gesture.state == .began{
+//            let ponto = gesture.location(in: self.tableView)
+//            if let indexPath = self.tableView.indexPathForRow(at:ponto){
+//                let contato = self.dao.buscaContatoNaPosicao(indexPath.row)
+//            }
+//        }
+    }
 
     
     /*
