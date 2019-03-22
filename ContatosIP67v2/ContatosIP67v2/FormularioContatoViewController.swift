@@ -74,16 +74,26 @@ class FormularioContatoViewController: UIViewController {
         self.contato.site = self.siteText.text!
     }
     
+    var delegate:FormularioContatoViewControllerDelegate?
+    
     func atualizaContato(){
         pegaDadosDoFormulario()
-        _ = self.navigationController?.popViewController(animated: true)
+        
+        self.delegate?.contatoAtualizado(contato)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func criaContato(){
         self.pegaDadosDoFormulario()
         dao.adiciona(contato)
-        _ = self.navigationController?.popViewController(animated: true)
+        
+        self.delegate?.contatoAdicionado(contato)
+        self.navigationController?.popViewController(animated: true)
     }
+    
+
+    
+    
     
 }
 

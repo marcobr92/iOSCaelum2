@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" title="Contatos" id="7Az-KA-vz9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yx4-ET-Bvm">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="8dO-T4-6xf"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="FormSegue" id="8dO-T4-6xf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
