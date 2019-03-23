@@ -45,11 +45,23 @@ class GerenciadorDeAcoes: NSObject {
     
     }
     
+    private func abrirAplicativo(com url:String){
+        UIApplication
+            .shared
+            .open(URL(string: url)!, options: [:], completionHandler: nil)
+    }
+    
     private func ligar(){
         
     }
     private func abrirNavegador(){
+        var url = contato.site!
         
+        if !url.hasPrefix("httpl://"){
+            url = "http://" + url
+        }
+        abrirAplicativo(com: url)
+
     }
     private func abrirMapa(){
         
