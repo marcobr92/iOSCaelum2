@@ -52,6 +52,17 @@ class GerenciadorDeAcoes: NSObject {
     }
     
     private func ligar(){
+        let device = UIDevice.current
+        
+        if device.model == "iPhone"{
+                print("UUID \(device.identifierForVendor!)")
+                abrirAplicativo(com: "tel:" + self.contato.telefone!)
+        }else{
+            let alert = UIAlertController(title: "Impossivel fazer ligaçoes", message: "Seu dispositivo não é um hiPhone", preferredStyle: .alert)
+            let acao = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(acao)
+            self.controller.present(alert, animated: true, completion: nil)
+        }
         
     }
     private func abrirNavegador(){
@@ -64,7 +75,8 @@ class GerenciadorDeAcoes: NSObject {
 
     }
     private func abrirMapa(){
-        
+        let url = ("http://maps.google.com/maps?q=" + self.contato.endereco!).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+            abrirAplicativo(com: url)
     }
     
     

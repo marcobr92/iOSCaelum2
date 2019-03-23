@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormularioContatoViewController: UIViewController {
+class FormularioContatoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,9 @@ class FormularioContatoViewController: UIViewController {
             
             
         }
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(selecionarFoto(sender:)))
+        self.imageView.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,6 +39,9 @@ class FormularioContatoViewController: UIViewController {
     @IBOutlet var telefone: UITextField!
     @IBOutlet var endereco: UITextField!
     @IBOutlet var siteText: UITextField!
+    @IBOutlet var imageView: UIImageView!
+
+    
     
     
     var dao:ContatoDAO
@@ -91,7 +97,28 @@ class FormularioContatoViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
-
+    func selecionarFoto(sender: AnyObject){
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            //camera ok
+        }else {
+            //usa biblioteca
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            imagePicker.delegate = self
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+            //14.2
+            if let imagemSelecionada = info[UIImagePickerControllerEditedImage] as? UIImage{
+                self.imageView.image = imagemSelecionada
+            }
+            picker.dismiss(animated: true, completion: nil)
+    }
+    
     
     
     
