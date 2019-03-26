@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="200.625" y="122.53521126760563"/>
         </scene>
-        <!--View Controller-->
+        <!--Contatos No Mapa View Controller-->
         <scene sceneID="wNn-dJ-4LS">
             <objects>
-                <viewController id="tA6-FC-DKh" sceneMemberID="viewController">
+                <viewController id="tA6-FC-DKh" customClass="ContatosNoMapaViewController" customModule="ContatosIP67v2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qzw-FO-8nY"/>
                         <viewControllerLayoutGuide type="bottom" id="QMr-au-Y9i"/>
@@ -173,6 +173,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="kfF-HX-Yrt"/>
+                    <connections>
+                        <outlet property="mapa" destination="YAQ-KN-edA" id="oYG-ht-wjb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKw-0D-jhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

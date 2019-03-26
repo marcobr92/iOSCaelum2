@@ -28,6 +28,7 @@
 		4C1906BE2241C39600163338 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
 		4C1906C02241CF3200163338 /* ContatoDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContatoDAO.swift; sourceTree = "<group>"; };
 		4C3F96EF2249916000EEC8C9 /* ContatosNoMapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContatosNoMapaViewController.swift; sourceTree = "<group>"; };
+		4C3F96F12249ABB600EEC8C9 /* Casa.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Casa.gpx; sourceTree = "<group>"; };
 		4C7516E222459A4D0061E287 /* GerenciadorDeAcoes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciadorDeAcoes.swift; sourceTree = "<group>"; };
 		4CBC905B2241B5A000C00AE0 /* ContatosIP67v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBC905E2241B5A000C00AE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 				4C1906C02241CF3200163338 /* ContatoDAO.swift */,
 				4CBC90622241B5A000C00AE0 /* Main.storyboard */,
 				4C3F96EF2249916000EEC8C9 /* ContatosNoMapaViewController.swift */,
+				4C3F96F12249ABB600EEC8C9 /* Casa.gpx */,
 				4CBC90682241B5A000C00AE0 /* Assets.xcassets */,
 				4CBC906A2241B5A000C00AE0 /* LaunchScreen.storyboard */,
 				4CBC906D2241B5A000C00AE0 /* Info.plist */,
