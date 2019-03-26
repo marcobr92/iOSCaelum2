@@ -6,11 +6,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Contatos-->
         <scene sceneID="Udn-1O-ptt">
             <objects>
                 <navigationController id="59b-z6-tYP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Mzt-MA-IJE"/>
+                    <tabBarItem key="tabBarItem" title="Contatos" image="lista-contatos" id="Mzt-MA-IJE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Cu-Hf-4hg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -196,11 +196,11 @@
             </objects>
             <point key="canvasLocation" x="-2213" y="-231"/>
         </scene>
-        <!--Item-->
+        <!--Mapa-->
         <scene sceneID="Yvi-mS-oD9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="InL-y9-e07" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="JhE-B9-M58"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="mapa-contatos" id="JhE-B9-M58"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2lZ-Od-K1K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -216,4 +216,8 @@
             <point key="canvasLocation" x="-1313" y="-549"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lista-contatos" width="30" height="30"/>
+        <image name="mapa-contatos" width="30" height="30"/>
+    </resources>
 </document>
