@@ -49,6 +49,7 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var latitude: UITextField!
     @IBOutlet var longitude: UITextField!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     
     
     var dao:ContatoDAO
@@ -147,20 +148,21 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
     }
     
     @IBAction func bucarCoordenadas(sender: UIButton){
+        self.loading.startAnimating()
+        sender.isEnabled = false
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(self.endereco.text!){(resultado, error) in
             if error == nil && (resultado?.count)! > 0{
                 let placemark = resultado![0]
                 let coordenada = placemark.location!.coordinate
-                
                 self.latitude.text = coordenada.latitude.description
                 self.longitude.text = coordenada.longitude.description
+                self.loading.stopAnimating()
+                sender.isEnabled = true
             }
         }
     }
-    
-    
-    
+
     
 }
 
