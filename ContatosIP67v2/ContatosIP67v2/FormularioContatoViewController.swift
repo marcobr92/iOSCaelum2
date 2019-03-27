@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FormularioContatoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -19,6 +20,8 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
             self.telefone.text = contato.telefone
             self.endereco.text = contato.endereco
             self.siteText.text = contato.site
+            self.longitude.text = contato.longitude?.description
+            self.latitude.text = contato.latitude?.description
             
             if let foto = self.contato.foto{
                 self.imageView.image = foto
@@ -44,8 +47,8 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
     @IBOutlet var endereco: UITextField!
     @IBOutlet var siteText: UITextField!
     @IBOutlet var imageView: UIImageView!
-
-    
+    @IBOutlet var latitude: UITextField!
+    @IBOutlet var longitude: UITextField!
     
     
     var dao:ContatoDAO
@@ -78,11 +81,25 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
             self.contato = Contato()
         }
         
+//        if self.botaoAdicionaImage.backgroundImageForState(.Normal) != nil{
+//            self.contato.foto = self.botaoAdicionaImage.backgroundImageForState(.Normal)
+//        }
+        
         self.contato.nome = self.nome.text!
         self.contato.telefone = self.telefone.text!
         self.contato.endereco = self.endereco.text!
         self.contato.site = self.siteText.text!
         self.contato.foto = self.imageView.image
+
+        
+        
+        if let latitude = Double(self.latitude.text!){
+            self.contato.latitude = latitude as NSNumber
+        }
+        
+        if let longitude = Double(self.longitude.text!){
+            self.contato.longitude = longitude as NSNumber
+        }
     }
     
     var delegate:FormularioContatoViewControllerDelegate?
@@ -127,6 +144,19 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
     override func viewDidLayoutSubviews() {
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.clipsToBounds = true
+    }
+    
+    @IBAction func bucarCoordenadas(sender: UIButton){
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(self.endereco.text!){(resultado, error) in
+            if error == nil && (resultado?.count)! > 0{
+                let placemark = resultado![0]
+                let coordenada = placemark.location!.coordinate
+                
+                self.latitude.text = coordenada.latitude.description
+                self.longitude.text = coordenada.longitude.description
+            }
+        }
     }
     
     
